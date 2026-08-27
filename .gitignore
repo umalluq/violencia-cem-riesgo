@@ -1,0 +1,19 @@
+# Datos y resultados reproducibles (no versionar)
+BD_2020-2025.csv
+*.parquet
+salidas_eda/
+salidas_limpieza/
+salidas_modelado/
+.codebase-memory/
+
+# Archivos locales o temporales
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.log
+
+# Material de referencia local y archivos de apoyo no esenciales
+referencia_repositorio_*
+*.png
+*.xlsx
+*.pdf
