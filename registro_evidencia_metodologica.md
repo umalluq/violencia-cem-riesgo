@@ -53,3 +53,9 @@ La fuente contiene registros administrativos de atención CEM; por tanto, el est
 El entrenamiento usa 2020–2023; 2024 se reserva para seleccionar configuraciones; 2025 queda intacto como prueba final. Esto impide que selección de variables, imputación, codificación, balanceo o ajuste de hiperparámetros utilicen información futura. La evaluación debe informar macro-F1, precisión/recall por clase, matriz de confusión y estabilidad entre 2024 y 2025; exactitud sola no basta.
 
 El siguiente paso metodológico compara modelos más complejos contra el baseline bajo exactamente los mismos cortes. Si el resultado cambia en 2025, se reporta como posible deriva temporal; no se reentrena ni reajusta usando ese conjunto de prueba.
+
+### Resultado de los baselines (2026-08-27)
+
+La regresión logística supera al clasificador mayoritario en 2024, pero mantiene una detección muy baja del nivel Severo (recall inicial: 6.16%; retrospectivo: 12.48%). Por ello no es un modelo operativo final; es una referencia reproducible para las siguientes comparaciones. La interpretación completa, las definiciones de las métricas y la redacción sugerida se encuentran en [interpretacion_resultados_baseline.md](interpretacion_resultados_baseline.md).
+
+Los resultados 2025 ya producidos para baselines se conservan como descripción de estabilidad temporal. A partir de este punto, la selección de variables, modelos, balanceo y umbrales se realizará exclusivamente con 2020--2024; 2025 no se empleará para orientar ajustes posteriores.
