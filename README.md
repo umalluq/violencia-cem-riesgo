@@ -33,7 +33,9 @@ Las figuras editoriales se generan con `python generar_figuras_tesis.py` en `sal
 
 La base cruda (`BD_2020-2025.csv`), resultados generados y Parquet no se versionan. Para ejecutar el flujo, colóquelos localmente en la raíz del proyecto y ejecute los notebooks en orden.
 
-Dependencias principales: Python 3.13, pandas, numpy, matplotlib, seaborn, pyarrow, scikit-learn, CatBoost, XGBoost y SHAP.
+La fuente oficial es el [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/), que publica registros administrativos por año y servicio. Descargue los archivos correspondientes, consolídelos como `BD_2020-2025.csv` y verifique los metadatos antes de cualquier publicación.
+
+Instale las dependencias con `pip install -r requirements.txt`. Para abrir el dashboard analítico: `streamlit run app.py`. El dashboard permite explorar años, departamentos y niveles de riesgo, descargar subconjuntos y consultar un perfil descriptivo. No automatiza decisiones de protección ni sustituye la valoración profesional.
 
 ## Documentación
 
@@ -41,3 +43,10 @@ Dependencias principales: Python 3.13, pandas, numpy, matplotlib, seaborn, pyarr
 - `nota_revision_paper_referencia.md`: contraste con el estudio de Rodríguez-Rodríguez et al. (2020).
 - `README_ejecutivo.md`: resumen para revisión académica y toma de decisiones.
 - `mapa_tesis.md`: correspondencia entre secciones, notebooks, figuras, tablas, resultados y referencias.
+- `app.py`: dashboard Streamlit para exploración temporal y territorial de la base consolidada.
+- `anexo_dashboard.md`: texto metodológico del dashboard para incorporar como anexo de la tesis.
+- `requirements.txt`: dependencias reproducibles del análisis y la aplicación.
+- `tesis_modelamiento_riesgo_completa.docx`: tesis integrada de 34 páginas, con método y resultados trazables, 12 figuras, 11 tablas, discusión, conclusiones, recomendaciones, referencias y anexos.
+- `crear_tesis_completa.py`: generador reproducible del documento; usa la plantilla institucional, los CSV de `salidas_tesis/tablas` y las figuras verificadas del proyecto.
+
+El documento completo deja como campos pendientes únicamente los datos personales e institucionales de portada, la declaración firmada, la dedicatoria y los agradecimientos.
