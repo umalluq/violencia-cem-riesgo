@@ -12,7 +12,7 @@ Proyecto de investigación reproducible sobre registros administrativos de casos
 
 | Orden | Notebook | Propósito |
 |---:|---|---|
-| 01 | `eda_desde_cero.ipynb` | Perfilado de la fuente cruda, nulos y cobertura. |
+| 01 | `01_eda_desde_cero.ipynb` | Perfilado de la fuente cruda, nulos y cobertura. |
 | 02 | `02_limpieza_y_base_analitica.ipynb` | Limpieza trazable y enriquecimiento UBIGEO. |
 | 03 | `03_especificacion_modelado_y_evidencia.ipynb` | Targets, evidencia y prevención de fuga. |
 | 04 | `04_auditoria_caracteristicas_nivel_riesgo.ipynb` | Auditoría de variables seleccionadas previamente. |
