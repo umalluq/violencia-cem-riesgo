@@ -31,7 +31,7 @@ Las curvas ROC one-vs-rest y la matriz de confusión principal 2025 se generan e
 
 ## Reproducibilidad
 
-La base cruda (`BD_2020-2025.csv`), los modelos entrenados, resultados generados y Parquet no se versionan. Para ejecutar el flujo, coloque la base localmente en la raíz del proyecto y ejecute los notebooks en orden.
+La base cruda (`BD_2020-2025.csv`), los modelos entrenados, resultados generados y Parquet no se versionan. Para ejecutar el flujo, coloque la base localmente en la raíz del proyecto y ejecute los notebooks en orden. Primero puede verificar la secuencia con `python run_all.py --dry-run`; para ejecutarla use `python run_all.py` o, por ejemplo, `python run_all.py --from 6` para reiniciar desde el notebook 06.
 
 La fuente oficial es el [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/), que publica registros administrativos por año y servicio. Descargue los archivos correspondientes, consolídelos como `BD_2020-2025.csv` y registre su huella antes de ejecutar el flujo:
 

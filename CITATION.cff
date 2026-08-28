@@ -8,5 +8,6 @@ authors:
     orcid: "https://orcid.org/0009-0004-4388-558X"
 repository-code: "https://github.com/umalluq/violencia-cem-riesgo"
 license: "MIT"
+version: "v1.0.0"
 date-released: "2026-08-28"
 abstract: "Flujo reproducible para analizar registros administrativos CEM y evaluar temporalmente modelos que reproducen el nivel de riesgo registrado."
