@@ -18,3 +18,14 @@ referencia_repositorio_*
 *.png
 *.xlsx
 *.pdf
+
+# Entregables y automatizaciones locales de la tesis (no publicar en GitHub)
+agregar_anexo_dashboard.py
+anexo_dashboard.md
+borrador_metodo_resultados.md
+generar_figuras_tesis.py
+generar_tablas_tesis.py
+mapa_tesis.md
+tablas_tesis.md
+tesis*.docx
+_render_tesis/
