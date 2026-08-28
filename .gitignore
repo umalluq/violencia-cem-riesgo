@@ -29,3 +29,10 @@ mapa_tesis.md
 tablas_tesis.md
 tesis*.docx
 _render_tesis/
+
+# Fuente derivada local para el dashboard de Tableau
+tableau/datos/
+
+# Libros locales de Power BI
+powerbi/*.pbix
+powerbi/*.pbit

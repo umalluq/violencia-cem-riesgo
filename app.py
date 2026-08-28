@@ -78,7 +78,6 @@ with tab2:
 with tab3:
     st.subheader("Perfil descriptivo (no es predicción individual)")
     st.warning("Resume frecuencias observadas; no asigna nivel de riesgo ni sustituye la evaluación profesional.")
-    age = st.slider("Edad de referencia", 0, 100, 30)
     available_departments = sorted(filtered["DPTO_DOMICILIO"].dropna().unique().tolist())
     if not available_departments:
         st.info("No hay observaciones para los filtros actuales.")
@@ -86,7 +85,6 @@ with tab3:
         department = st.selectbox("Código de departamento", available_departments)
         profile = filtered[filtered["DPTO_DOMICILIO"] == department]
         profile_dist = profile["NIVEL_RIESGO"].value_counts(normalize=True).reindex(RISK_OPTIONS, fill_value=0).mul(100).round(2)
-        st.metric("Edad de referencia", f"{age} años")
         st.bar_chart(profile_dist)
         st.caption("Distribución empírica del subconjunto seleccionado; no es probabilidad causal ni score de intervención.")
 

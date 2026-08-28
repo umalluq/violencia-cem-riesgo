@@ -15,11 +15,6 @@ Actualizado: 2026-08-27
 - Congelamiento del CatBoost inicial parsimonioso como modelo principal.
 - Evaluación confirmatoria única en 2025.
 - Auditoría de importancia, SHAP, subgrupos y Brier.
-- Mapa maestro de la tesis en `mapa_tesis.md`.
-
-## Próximo paso
-
-Construir las tablas editoriales T1–T11 definidas en `mapa_tesis.md` e integrar el paquete gráfico ya generado en `salidas_tesis/figuras`. Después redactar Método y Resultados con referencias cruzadas a cada tabla y figura.
 
 ## Resultado principal congelado
 
