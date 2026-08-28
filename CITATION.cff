@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Si utilizas este repositorio, por favor cítalo como se indica a continuación."
+title: "Violencia CEM: análisis reproducible del nivel de riesgo registrado"
+type: software
+authors:
+  - family-names: "Collazos Ríos"
+    given-names: "Jaime Percy"
+    orcid: "https://orcid.org/0009-0004-4388-558X"
+repository-code: "https://github.com/umalluq/violencia-cem-riesgo"
+license: "MIT"
+date-released: "2026-08-28"
+abstract: "Flujo reproducible para analizar registros administrativos CEM y evaluar temporalmente modelos que reproducen el nivel de riesgo registrado."
