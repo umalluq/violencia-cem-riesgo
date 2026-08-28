@@ -1,0 +1,9 @@
+{
+  "source_filename": "BD_2020-2025.csv",
+  "sha256": "464580235f762e6449d1d4adb4efc7d361509fdd829e1dc80d7984336cde5065",
+  "size_bytes": 367491576,
+  "local_modified_at": "2026-03-14T06:28:04.465604+00:00",
+  "fingerprinted_at": "2026-08-28T19:10:52.546832+00:00",
+  "algorithm": "SHA-256",
+  "note": "El archivo fuente no se versiona; este manifiesto permite comprobar que se usó la misma copia local."
+}

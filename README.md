@@ -31,11 +31,17 @@ Las curvas ROC one-vs-rest y la matriz de confusión principal 2025 se generan e
 
 ## Reproducibilidad
 
-La base cruda (`BD_2020-2025.csv`), resultados generados y Parquet no se versionan. Para ejecutar el flujo, colóquelos localmente en la raíz del proyecto y ejecute los notebooks en orden.
+La base cruda (`BD_2020-2025.csv`), los modelos entrenados, resultados generados y Parquet no se versionan. Para ejecutar el flujo, coloque la base localmente en la raíz del proyecto y ejecute los notebooks en orden.
 
-La fuente oficial es el [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/), que publica registros administrativos por año y servicio. Descargue los archivos correspondientes, consolídelos como `BD_2020-2025.csv` y verifique los metadatos antes de cualquier publicación.
+La fuente oficial es el [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/), que publica registros administrativos por año y servicio. Descargue los archivos correspondientes, consolídelos como `BD_2020-2025.csv` y registre su huella antes de ejecutar el flujo:
 
-Instale las dependencias con `pip install -r requirements.txt`. Para abrir el dashboard analítico: `streamlit run app.py`. El dashboard permite explorar años, departamentos y niveles de riesgo, descargar subconjuntos y consultar un perfil descriptivo. No automatiza decisiones de protección ni sustituye la valoración profesional.
+```powershell
+python scripts/fingerprint_source.py BD_2020-2025.csv --output metadata/fuente_bd_2020_2025.json
+```
+
+El manifiesto versionado contiene SHA-256, tamaño y fechas de la copia utilizada; no contiene filas de casos. El notebook 09 persiste localmente el modelo principal congelado (`modelos/`) junto con su configuración y huella SHA-256.
+
+El entorno de referencia está fijado en Python 3.13.14 (`.python-version`) y `requirements.lock`. Instale las dependencias con `pip install -r requirements.txt`. Para abrir el dashboard analítico: `streamlit run app.py`. El dashboard permite explorar años, departamentos y niveles de riesgo, descargar subconjuntos y consultar un perfil descriptivo. No automatiza decisiones de protección ni sustituye la valoración profesional.
 
 ## Documentación
 
@@ -43,4 +49,5 @@ Instale las dependencias con `pip install -r requirements.txt`. Para abrir el da
 - `nota_revision_paper_referencia.md`: contraste con el estudio de Rodríguez-Rodríguez et al. (2020).
 - `README_ejecutivo.md`: resumen para revisión académica y toma de decisiones.
 - `app.py`: dashboard Streamlit para exploración temporal y territorial de la base consolidada.
-- `requirements.txt`: dependencias reproducibles del análisis y la aplicación.
+- `requirements.in` y `requirements.lock`: dependencias directas y resolución exacta del análisis y la aplicación.
+- `metadata/fuente_bd_2020_2025.json`: huella verificable de la fuente local utilizada.

@@ -1,0 +1,21 @@
+name: Reproducibility checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    # El lock se resolvió en Windows porque el flujo de análisis se ejecuta allí.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
+      - name: Install locked environment
+        run: python -m pip install -r requirements.txt
+      - name: Run reproducibility checks
+        run: python -m unittest discover -s tests -v
