@@ -31,3 +31,9 @@ Los Brier one-vs-rest son 0.158 para Leve, 0.277 para Moderado y 0.199 para Seve
 ## Advertencia técnica
 
 El `FutureWarning` de pandas sobre `observed=False` no modifica los resultados actuales. En una versión posterior del notebook se puede fijar explícitamente `observed=True` o `False` en `groupby` para silenciarlo y preservar el comportamiento elegido.
+
+## Anexo SHAP: consistencia explicativa, no causalidad
+
+El ranking SHAP para la clase Severo ubica a `VINCULO_AGRESOR_VICTIMA` (media absoluta 0.1301), `EDAD_VICTIMA` (0.1275), `PRIMERA_VEZ_AGREDE` (0.1078) y `ESTADO_AGRESOR_U_A` (0.0977) como las contribuciones medias más altas. Esta jerarquía coincide sustantivamente con la importancia interna de CatBoost y con el ranking previo por permutación: las cuatro variables centrales del modelo parsimonioso continúan siendo las más influyentes bajo tres formas distintas de auditoría.
+
+El gráfico de dependencia de edad muestra un patrón no lineal dentro del modelo: valores SHAP mayoritariamente positivos en edades tempranas, contribuciones negativas aproximadamente entre 20 y 70 años, y contribuciones positivas nuevamente a edades avanzadas. El gráfico no permite concluir que la edad cause el nivel Severo ni que exista un umbral clínico o administrativo. Refleja patrones conjuntos de los registros, puede estar afectado por otras variables e incluye grupos de menor frecuencia en los extremos de edad. Por ello se presenta como anexo de explicabilidad y debe acompañarse de la auditoría por grupos, que ya mostró menor recall para personas de 60+.

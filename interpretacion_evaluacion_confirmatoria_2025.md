@@ -8,7 +8,7 @@ Las configuraciones fueron seleccionadas en validación temporal 2024 y luego re
 
 | Métrica | 2024 | 2025 | Cambio |
 |---|---:|---:|---:|
-| Macro-F1 | 0.4268 | 0.4328 | +0.0060 |
+| Macro-F1 | 0.4247 | 0.4328 | +0.0081 |
 | Balanced accuracy | 0.4521 | 0.4659 | +0.0138 |
 | Recall Severo | 0.5145 | 0.5374 | +0.0229 |
 | Precisión Severo | 0.4053 | 0.4201 | +0.0148 |
@@ -16,7 +16,15 @@ Las configuraciones fueron seleccionadas en validación temporal 2024 y luego re
 
 El modelo mantiene el desempeño y mejora levemente en el año futuro. De los casos Severos de 2025, identifica 53.74%; por tanto, aún omite una proporción relevante y debe presentarse como apoyo para priorización y análisis, nunca como sustituto de la valoración profesional.
 
+La matriz de confusión confirma esta lectura. De 51,487 casos registrados como Severos, el modelo identifica 27,668, confunde 14,799 con Moderado y 9,020 con Leve. Entre los casos Moderados, 31,864 son clasificados como Severos, lo que muestra que el aumento de detección se acompaña de un volumen importante de falsas alertas.
+
 La caída de accuracy frente a un clasificador que favorece Moderado no contradice este resultado. El objetivo es distribuir mejor los aciertos entre Leve, Moderado y Severo; por ello macro-F1 y balanced accuracy son las métricas centrales.
+
+## Curvas ROC multiclase
+
+Como análisis complementario se calcularon curvas ROC one-vs-rest con las probabilidades del CatBoost principal en 2025. El AUC fue 0.695 para Leve, 0.564 para Moderado y 0.656 para Severo. Estos valores indican discriminación modesta, especialmente para Moderado, y son coherentes con los errores observados en la matriz de confusión.
+
+Las curvas ROC no se utilizaron para seleccionar el modelo ni para escoger umbrales después de observar 2025. Tampoco sustituyen macro-F1, balanced accuracy, precisión/recall de Severo, calibración o evaluación por subgrupos; se incorporan para completar la caracterización discriminativa del modelo congelado.
 
 ## Resultado retrospectivo complementario
 

@@ -18,8 +18,26 @@ Se analiza una base de 936,835 registros administrativos de atención CEM entre 
 
 ## Estado actual
 
-Las seis bases temporales sin nulos ya fueron generadas. El siguiente paso es ejecutar y evaluar los baselines del notebook 06, antes de comparar modelos más complejos.
+El flujo analítico está ejecutado hasta el notebook 10. La regresión logística inicial confirmó que existía señal predictiva, pero su recall de Severo en 2024 fue solo 6.16%. Después de seleccionar características exclusivamente con 2020–2023 y comparar modelos en 2024, se congeló como candidato principal **CatBoost balanceado con nueve variables iniciales parsimoniosas**.
+
+| Métrica principal | Validación 2024 | Prueba 2025 |
+|---|---:|---:|
+| Macro-F1 | 0.4247 | 0.4328 |
+| Balanced accuracy | 0.4521 | 0.4659 |
+| Recall Severo | 0.5145 | 0.5374 |
+| Precisión Severo | 0.4053 | 0.4201 |
+
+El desempeño se mantiene en el año futuro, pero el modelo todavía omite 46.26% de los casos Severos. La auditoría mostró además menor recall de Severo en personas de 60+ (0.354) y en `SEXO_VICTIMA=1` (0.293), por lo que no puede afirmarse desempeño uniforme entre subgrupos.
+
+El resultado retrospectivo complementario usa `TIPO_VIOLENCIA` y no representa predicción temprana. Random Forest conserva la mejor macro-F1 global retrospectiva; Extra Trees detecta más casos Severos a cambio de más falsas alertas.
+
+## Productos para la tesis
+
+- `mapa_tesis.md` registra la trazabilidad por sección, notebook, figura, tabla, resultado y referencia.
+- `generar_figuras_tesis.py` produce el paquete gráfico editorial desde los CSV existentes.
+- El notebook 09 exporta la matriz de confusión principal, probabilidades resumidas mediante curvas ROC one-vs-rest y AUC por clase.
+- El notebook 10 contiene importancia CatBoost, SHAP, auditoría por subgrupos y Brier descriptivo.
 
 ## Uso responsable
 
-El proyecto es para investigación y soporte analítico. No estima prevalencia, no establece causalidad y no debe utilizarse para automatizar decisiones de protección, legales o de atención.
+El proyecto es para investigación y soporte analítico. No estima prevalencia, no establece causalidad y no debe utilizarse para automatizar decisiones de protección, legales o de atención. Las curvas ROC/AUC complementan, pero no sustituyen, macro-F1, balanced accuracy, recall/precisión de Severo, matrices de confusión, calibración y auditoría de subgrupos.

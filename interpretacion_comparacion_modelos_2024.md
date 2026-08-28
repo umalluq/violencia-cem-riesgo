@@ -8,7 +8,7 @@ La especificación técnicamente preferida para el objetivo prospectivo es:
 
 > **CatBoost balanceado + conjunto parsimonioso inicial (9 variables)**
 
-Obtuvo la mejor macro-F1 (0.4268) y la mejor balanced accuracy (0.4521) entre las configuraciones iniciales. Además, identifica 51.45% de los casos que realmente fueron Severos, con precisión de 40.53% para esa clase. Supera a CatBoost con el conjunto completo (macro-F1 0.4226; balanced accuracy 0.4563; recall Severo 52.54%) en macro-F1 y usa ocho variables menos; la pequeña ganancia de balanced accuracy/recall del conjunto completo debe contrastarse con su mayor carga de información.
+Obtuvo la mejor macro-F1 (0.4247) entre las configuraciones iniciales y una balanced accuracy de 0.4521. Además, identifica 51.45% de los casos que realmente fueron Severos, con precisión de 40.53% para esa clase. Supera a CatBoost con el conjunto completo (macro-F1 0.4226; balanced accuracy 0.4563; recall Severo 52.54%) en macro-F1 y usa ocho variables menos; la pequeña ganancia de balanced accuracy/recall del conjunto completo debe contrastarse con su mayor carga de información.
 
 La matriz de confusión del candidato parsimonioso muestra que, de 50,018 casos Severos de 2024, clasifica correctamente 25,733. Los 24,285 restantes se confunden principalmente con Moderado (15,164) y Leve (9,121). Por tanto, es un modelo de apoyo con señal moderada, no un sustituto de la valoración profesional.
 
@@ -27,7 +27,7 @@ No es correcto que el algoritmo decida ese intercambio: requiere una regla insti
 
 ## Comparación con el baseline
 
-El baseline inicial de regresión logística sin pesos tenía macro-F1 0.3099, balanced accuracy 0.3649 y recall Severo 0.0616. CatBoost parsimonioso los eleva a 0.4268, 0.4521 y 0.5145 respectivamente. La mejora de recall de Severo es especialmente relevante: pasa de detectar alrededor de 6 a 51 de cada 100 casos Severos en validación 2024.
+El baseline inicial de regresión logística sin pesos tenía macro-F1 0.3099, balanced accuracy 0.3649 y recall Severo 0.0616. CatBoost parsimonioso los eleva a 0.4247, 0.4521 y 0.5145 respectivamente. La mejora de recall de Severo es especialmente relevante: pasa de detectar alrededor de 6 a 51 de cada 100 casos Severos en validación 2024.
 
 ## Decisión y siguiente paso
 
@@ -41,7 +41,7 @@ Antes de evaluar el candidato retrospectivo en 2025 se debe escoger explícitame
 
 ### Principal prospectivo
 
-**CatBoost balanceado con las nueve variables iniciales parsimoniosas** es el resultado principal de la tesis. Responde: *¿con la información razonablemente disponible al inicio de la atención, qué tan bien puede estimarse el nivel de riesgo registrado?* No incorpora `TIPO_VIOLENCIA`, pues este dato pertenece a una fase más avanzada de la atención. Fue elegido por lograr la mejor macro-F1 inicial (0.4268), balanced accuracy de 0.4521 y recall Severo de 0.5145. Es una herramienta potencial de apoyo temprano, no un sustituto de la valoración profesional.
+**CatBoost balanceado con las nueve variables iniciales parsimoniosas** es el resultado principal de la tesis. Responde: *¿con la información razonablemente disponible al inicio de la atención, qué tan bien puede estimarse el nivel de riesgo registrado?* No incorpora `TIPO_VIOLENCIA`, pues este dato pertenece a una fase más avanzada de la atención. Fue elegido por lograr la mejor macro-F1 inicial (0.4247), balanced accuracy de 0.4521 y recall Severo de 0.5145. Es una herramienta potencial de apoyo temprano, no un sustituto de la valoración profesional.
 
 ### Complementario retrospectivo
 
