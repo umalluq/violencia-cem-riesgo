@@ -31,13 +31,6 @@ El desempeño se mantiene en el año futuro, pero el modelo todavía omite 46.26
 
 El resultado retrospectivo complementario usa `TIPO_VIOLENCIA` y no representa predicción temprana. Random Forest conserva la mejor macro-F1 global retrospectiva; Extra Trees detecta más casos Severos a cambio de más falsas alertas.
 
-## Productos para la tesis
-
-- `mapa_tesis.md` registra la trazabilidad por sección, notebook, figura, tabla, resultado y referencia.
-- `generar_figuras_tesis.py` produce el paquete gráfico editorial desde los CSV existentes.
-- El notebook 09 exporta la matriz de confusión principal, probabilidades resumidas mediante curvas ROC one-vs-rest y AUC por clase.
-- El notebook 10 contiene importancia CatBoost, SHAP, auditoría por subgrupos y Brier descriptivo.
-
 ## Uso responsable
 
 El proyecto es para investigación y soporte analítico. No estima prevalencia, no establece causalidad y no debe utilizarse para automatizar decisiones de protección, legales o de atención. Las curvas ROC/AUC complementan, pero no sustituyen, macro-F1, balanced accuracy, recall/precisión de Severo, matrices de confusión, calibración y auditoría de subgrupos.

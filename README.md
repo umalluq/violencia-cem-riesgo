@@ -27,7 +27,7 @@ Proyecto de investigación reproducible sobre registros administrativos de casos
 
 El modelo principal congelado es CatBoost balanceado con nueve variables del escenario inicial parsimonioso. En validación 2024 obtuvo macro-F1 0.4247 y recall de Severo 0.5145. En la prueba confirmatoria 2025 alcanzó macro-F1 0.4328 y recall de Severo 0.5374. El desempeño es estable, pero todavía omite 46.26% de los casos Severos; por tanto, no sustituye la valoración profesional.
 
-Las figuras editoriales se generan con `python generar_figuras_tesis.py` en `salidas_tesis/figuras`. Las curvas ROC one-vs-rest y la matriz de confusión principal 2025 se generan en el notebook 09 porque requieren probabilidades y predicciones individuales.
+Las curvas ROC one-vs-rest y la matriz de confusión principal 2025 se generan en el notebook 09 porque requieren probabilidades y predicciones individuales.
 
 ## Reproducibilidad
 
@@ -42,11 +42,5 @@ Instale las dependencias con `pip install -r requirements.txt`. Para abrir el da
 - `registro_evidencia_metodologica.md`: decisiones, fuentes y justificaciones.
 - `nota_revision_paper_referencia.md`: contraste con el estudio de Rodríguez-Rodríguez et al. (2020).
 - `README_ejecutivo.md`: resumen para revisión académica y toma de decisiones.
-- `mapa_tesis.md`: correspondencia entre secciones, notebooks, figuras, tablas, resultados y referencias.
 - `app.py`: dashboard Streamlit para exploración temporal y territorial de la base consolidada.
-- `anexo_dashboard.md`: texto metodológico del dashboard para incorporar como anexo de la tesis.
 - `requirements.txt`: dependencias reproducibles del análisis y la aplicación.
-- `tesis_modelamiento_riesgo_completa.docx`: tesis integrada de 34 páginas, con método y resultados trazables, 12 figuras, 11 tablas, discusión, conclusiones, recomendaciones, referencias y anexos.
-- `crear_tesis_completa.py`: generador reproducible del documento; usa la plantilla institucional, los CSV de `salidas_tesis/tablas` y las figuras verificadas del proyecto.
-
-El documento completo deja como campos pendientes únicamente los datos personales e institucionales de portada, la declaración firmada, la dedicatoria y los agradecimientos.
