@@ -28,6 +28,33 @@ class ReproducibilityContractTests(unittest.TestCase):
         self.assertIn("configuracion_modelo_principal", source)
         self.assertIn("MODELS_DIR", source)
 
+    def test_top30_reference_file_exists_and_is_valid(self):
+        top30_path = ROOT / "referencia_repositorio_top30_riesgo.csv"
+        self.assertTrue(top30_path.is_file(), "El archivo de insumo Top 30 debe existir para el notebook 04.")
+        lines = top30_path.read_text(encoding="utf-8").strip().splitlines()
+        self.assertGreaterEqual(len(lines), 31, "Debe contener cabecera y al menos 30 filas.")
+        self.assertIn("feature", lines[0])
+        self.assertIn("score_consenso", lines[0])
+
+    def test_interpretability_notebook_loads_frozen_model_contract(self):
+        notebook = json.loads((ROOT / "10_interpretabilidad_equidad_calibracion.ipynb").read_text(encoding="utf-8"))
+        source = "".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+        self.assertIn("load_model", source)
+        self.assertIn("catboost_inicial_parsimonioso_2020_2024.cbm", source)
+        self.assertIn("ruta_configuracion_principal", source)
+
+    def test_baseline_notebook_isolates_confirmatory_test_split(self):
+        notebook = json.loads((ROOT / "06_evaluacion_temporal_modelos_riesgo.ipynb").read_text(encoding="utf-8"))
+        source = "".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+        self.assertNotIn("for corte in ['validacion', 'prueba']", source)
+        self.assertIn("for corte in ['validacion']", source)
+
+    def test_features_finales_notebook_enforces_leakage_gate(self):
+        notebook = json.loads((ROOT / "05_bases_finales_modelado_riesgo.ipynb").read_text(encoding="utf-8"))
+        source = "".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+        self.assertIn("BLOQUEADAS_RIESGO", source)
+        self.assertIn("assert not fuga", source)
+
 
 if __name__ == "__main__":
     unittest.main()

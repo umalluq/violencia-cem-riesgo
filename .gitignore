@@ -5,6 +5,7 @@ salidas_eda/
 salidas_limpieza/
 salidas_modelado/
 salidas_tesis/
+salidas_ejecucion/
 .codebase-memory/
 
 # Archivos locales o temporales
@@ -12,9 +13,11 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 *.log
+~$*
 
 # Material de referencia local y archivos de apoyo no esenciales
 referencia_repositorio_*
+!referencia_repositorio_top30_riesgo.csv
 *.xlsx
 *.pdf
 
@@ -26,8 +29,10 @@ generar_figuras_tesis.py
 generar_tablas_tesis.py
 mapa_tesis.md
 tablas_tesis.md
-tesis*.docx
+*.docx
 _render_tesis/
+_render_dashboard/
+astra/
 
 # Artefactos entrenados: se reproducen localmente, pero no se publican.
 modelos/

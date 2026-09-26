@@ -93,7 +93,7 @@ c3.metric("Departamentos", filtered["DEPARTAMENTO"].nunique())
 severe_rate = filtered["NIVEL_RIESGO"].eq("Severo").mean() * 100 if len(filtered) else 0
 c4.metric("Proporción Severo", f"{severe_rate:.1f}%")
 
-tab1, tab2, tab3 = st.tabs(["Evolución", "Territorio y composición", "Simulador descriptivo"])
+tab1, tab2, tab3 = st.tabs(["Evolución", "Territorio y composición", "Perfil departamental"])
 with tab1:
     st.markdown('<div class="section-label">Tendencia temporal</div>', unsafe_allow_html=True)
     st.subheader("Casos y composición del riesgo por año")
@@ -125,7 +125,22 @@ with tab2:
         st.subheader("Composición del nivel de riesgo")
         composition = filtered["NIVEL_RIESGO"].value_counts().reindex(RISK_OPTIONS, fill_value=0)
         st.bar_chart(composition)
-    st.download_button("Descargar datos filtrados (CSV)", filtered.to_csv(index=False).encode("utf-8"), "cem_filtrado.csv", "text/csv")
+
+    # Descarga agregada y con supresión de frecuencias bajas (< 5) para confidencialidad
+    resumen_territorial = (
+        filtered.groupby(["AÑO", "DEPARTAMENTO", "NIVEL_RIESGO"])
+        .size()
+        .reset_index(name="Casos")
+    )
+    resumen_territorial = resumen_territorial[resumen_territorial["Casos"] >= 5]
+    csv_agregado = resumen_territorial.to_csv(index=False).encode("utf-8")
+    st.download_button(
+        "Descargar resumen agregado territorial (CSV)",
+        csv_agregado,
+        "cem_resumen_agregado.csv",
+        "text/csv",
+        help="Exporta únicamente conteos agregados con supresión de celdas menores a 5 casos para salvaguardar la confidencialidad."
+    )
 
 with tab3:
     st.markdown('<div class="section-label">Consulta exploratoria</div>', unsafe_allow_html=True)
