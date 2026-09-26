@@ -20,12 +20,14 @@ Se analiza una base de 936,835 registros administrativos de atención CEM entre 
 
 El flujo analítico está ejecutado hasta el notebook 10. La regresión logística inicial confirmó que existía señal predictiva, pero su recall de Severo en 2024 fue solo 6.16%. Después de seleccionar características exclusivamente con 2020–2023 y comparar modelos en 2024, se congeló como candidato principal **CatBoost balanceado con nueve variables iniciales parsimoniosas**.
 
-| Métrica principal | Validación 2024 | Prueba 2025 |
+| Métrica principal | Validación 2024 [IC 95%] | Prueba confirmatoria 2025 [IC 95%] |
 |---|---:|---:|
-| Macro-F1 | 0.4247 | 0.4328 |
-| Balanced accuracy | 0.4521 | 0.4659 |
-| Recall Severo | 0.5145 | 0.5374 |
-| Precisión Severo | 0.4053 | 0.4201 |
+| Macro-F1 | 0.4247 [0.4223 – 0.4271] | 0.4328 [0.4304 – 0.4353] |
+| Balanced accuracy | 0.4521 [0.4494 – 0.4546] | 0.4659 [0.4633 – 0.4686] |
+| Recall Severo | 0.5145 [0.5098 – 0.5189] | 0.5374 [0.5333 – 0.5415] |
+| Precisión Severo | 0.4054 [0.4016 – 0.4092] | 0.4202 [0.4165 – 0.4240] |
+
+*Intervalos de confianza al 95% calculados por percentiles bootstrap (B = 2,000 remuestreos) sobre las particiones completas de validación temporal (2024, N=168,393) y prueba confirmatoria (2025, N=168,543). La estabilidad entre periodos no es atribuible a variabilidad muestral.*
 
 El desempeño se mantiene en el año futuro, pero el modelo todavía omite 46.26% de los casos Severos. La auditoría mostró además menor recall de Severo en personas de 60+ (0.354) y en `SEXO_VICTIMA=1` (0.293), por lo que no puede afirmarse desempeño uniforme entre subgrupos.
 

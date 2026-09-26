@@ -29,25 +29,44 @@ El modelo principal congelado es CatBoost balanceado con nueve variables del esc
 
 Las curvas ROC one-vs-rest y la matriz de confusión principal 2025 se generan en el notebook 09 porque requieren probabilidades y predicciones individuales.
 
-## Reproducibilidad
+## Reproducibilidad y Determinismo
 
-La base cruda (`BD_2020-2025.csv`), los modelos entrenados, resultados generados y Parquet no se versionan. Para ejecutar el flujo, coloque la base localmente en la raíz del proyecto y ejecute los notebooks en orden. Primero puede verificar la secuencia con `python run_all.py --dry-run`; para ejecutarla use `python run_all.py` o, por ejemplo, `python run_all.py --from 6` para reiniciar desde el notebook 06.
-
-La fuente oficial es el [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/), que publica registros administrativos por año y servicio. Descargue los archivos correspondientes, consolídelos como `BD_2020-2025.csv` y registre su huella antes de ejecutar el flujo:
+La base cruda (`BD_2020-2025.csv`), los modelos entrenados y los resultados intermedios no se versionan para proteger la privacidad. Para ejecutar el flujo completo, coloque la base localmente en la raíz y verifique su integridad contra el manifiesto SHA-256 oficial:
 
 ```powershell
-python scripts/fingerprint_source.py BD_2020-2025.csv --output metadata/fuente_bd_2020_2025.json
+python scripts/fingerprint_source.py BD_2020-2025.csv --verify metadata/fuente_bd_2020_2025.json
 ```
 
-El manifiesto versionado contiene SHA-256, tamaño y fechas de la copia utilizada; no contiene filas de casos. El notebook 09 persiste localmente el modelo principal congelado (`modelos/`) junto con su configuración y huella SHA-256.
+El orquestador `run_all.py` fija variables de entorno determinísticas a nivel de hilos (`OMP_NUM_THREADS=1`, `PYTHONHASHSEED=0`) y permite ejecuciones por rangos sin sobreescritura accidental:
 
-El entorno de referencia está fijado en Python 3.13.14 (`.python-version`) y `requirements.lock`. Instale las dependencias con `pip install -r requirements.txt`. Para abrir el dashboard analítico: `streamlit run app.py`. El dashboard permite explorar años, departamentos y niveles de riesgo, descargar subconjuntos y consultar un perfil descriptivo. No automatiza decisiones de protección ni sustituye la valoración profesional.
+```powershell
+python run_all.py --dry-run
+python run_all.py --from 1 --to 5 --output-dir salidas_ejecucion
+python run_all.py --verify-source
+```
+
+El entorno de referencia está fijado en Python 3.13.14 (`.python-version`) y `requirements.lock`. Instale las dependencias con `pip install -r requirements.txt`.
+
+## Dashboard Exploratorio (`app.py`)
+
+Para inicializar el visualizador: `streamlit run app.py`.
+
+* **Privacidad por diseño:** El dashboard consume exclusivamente datos agregados precomputados (`data/resumen_agregado_cem.csv`), eliminando la carga de microdatos de víctimas en memoria.
+* **Supresión estadística:** Toda celda, métrica o gráfico con frecuencias menores a 5 casos (`< 5`) es suprimida de forma centralizada para garantizar el secreto estadístico y evitar la reidentificación.
+* **Advertencia de uso:** Herramienta estrictamente analítica e institucional; **no debe exponerse en redes públicas abiertas**. No profilea personas ni automatiza decisiones de protección.
+
+## Declaración Ética y de Disponibilidad de Datos
+
+* **Data Availability Statement:** Los registros administrativos originales provienen del [Banco de Datos del Portal Estadístico Warmi Ñan](https://portalestadistico.warminan.gob.pe/banco-de-datos/) del Ministerio de la Mujer y Poblaciones Vulnerables (MIMP). Por razones éticas y de protección de personas en situación de vulnerabilidad, los microdatos crudos individuales no se redistribuyen en este repositorio. Se incluye un manifiesto criptográfico de metadatos (`metadata/fuente_bd_2020_2025.json`) y datos agregados seguros para el dashboard (`data/resumen_agregado_cem.csv`).
+* **Ethics Statement:** Esta investigación analiza registros secundarios anonimizados con fines estrictamente académicos. Los modelos de aprendizaje automático no constituyen herramientas de triaje ni sustituyen la evaluación pericial o legal en Centros Emergencia Mujer.
 
 ## Documentación
 
-- `registro_evidencia_metodologica.md`: decisiones, fuentes y justificaciones.
+- `registro_evidencia_metodologica.md`: decisiones metodológicas, procedencia de variables (Top 30) y sustento citable.
 - `nota_revision_paper_referencia.md`: contraste con el estudio de Rodríguez-Rodríguez et al. (2020).
 - `README_ejecutivo.md`: resumen para revisión académica y toma de decisiones.
-- `app.py`: dashboard Streamlit para exploración temporal y territorial de la base consolidada.
-- `requirements.in` y `requirements.lock`: dependencias directas y resolución exacta del análisis y la aplicación.
+- `app.py`: dashboard Streamlit con supresión de confidencialidad para exploración temporal y territorial.
+- `scripts/preparar_datos_dashboard.py`: generador de la base agregada segura para el dashboard.
+- `scripts/fingerprint_source.py`: generador y verificador (`--verify`) de la huella SHA-256 de la fuente.
+- `requirements.in` y `requirements.lock`: dependencias directas y resolución exacta.
 - `metadata/fuente_bd_2020_2025.json`: huella verificable de la fuente local utilizada.

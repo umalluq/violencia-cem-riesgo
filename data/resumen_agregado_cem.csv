@@ -1,0 +1,458 @@
+AÑO,DEPARTAMENTO,NIVEL_RIESGO,Casos
+2020,Amazonas,Leve,294
+2020,Amazonas,Moderado,677
+2020,Amazonas,Severo,618
+2020,Apurímac,Leve,810
+2020,Apurímac,Moderado,1558
+2020,Apurímac,Severo,472
+2020,Arequipa,Leve,3421
+2020,Arequipa,Moderado,6173
+2020,Arequipa,Severo,1628
+2020,Ayacucho,Leve,1098
+2020,Ayacucho,Moderado,2161
+2020,Ayacucho,Severo,743
+2020,Cajamarca,Leve,938
+2020,Cajamarca,Moderado,1260
+2020,Cajamarca,Severo,572
+2020,Callao,Leve,808
+2020,Callao,Moderado,1566
+2020,Callao,Severo,447
+2020,Cusco,Leve,2873
+2020,Cusco,Moderado,4111
+2020,Cusco,Severo,1192
+2020,Huancavelica,Leve,333
+2020,Huancavelica,Moderado,599
+2020,Huancavelica,Severo,403
+2020,Huánuco,Leve,967
+2020,Huánuco,Moderado,1422
+2020,Huánuco,Severo,395
+2020,Ica,Leve,898
+2020,Ica,Moderado,1549
+2020,Ica,Severo,1090
+2020,Junín,Leve,1957
+2020,Junín,Moderado,2114
+2020,Junín,Severo,602
+2020,La Libertad,Leve,1277
+2020,La Libertad,Moderado,2825
+2020,La Libertad,Severo,1669
+2020,Lambayeque,Leve,741
+2020,Lambayeque,Moderado,1679
+2020,Lambayeque,Severo,731
+2020,Lima,Leve,5998
+2020,Lima,Moderado,17570
+2020,Lima,Severo,9085
+2020,Loreto,Leve,294
+2020,Loreto,Moderado,912
+2020,Loreto,Severo,749
+2020,Madre de Dios,Leve,112
+2020,Madre de Dios,Moderado,417
+2020,Madre de Dios,Severo,259
+2020,Moquegua,Leve,344
+2020,Moquegua,Moderado,321
+2020,Moquegua,Severo,191
+2020,Pasco,Leve,356
+2020,Pasco,Moderado,502
+2020,Pasco,Severo,275
+2020,Piura,Leve,1167
+2020,Piura,Moderado,2391
+2020,Piura,Severo,1195
+2020,Puno,Leve,1117
+2020,Puno,Moderado,1969
+2020,Puno,Severo,790
+2020,San Martín,Leve,1286
+2020,San Martín,Moderado,1646
+2020,San Martín,Severo,984
+2020,Tacna,Leve,522
+2020,Tacna,Moderado,1167
+2020,Tacna,Severo,387
+2020,Tumbes,Leve,389
+2020,Tumbes,Moderado,864
+2020,Tumbes,Severo,653
+2020,Ucayali,Leve,225
+2020,Ucayali,Moderado,387
+2020,Ucayali,Severo,196
+2020,Áncash,Leve,1044
+2020,Áncash,Moderado,2317
+2020,Áncash,Severo,1738
+2021,Amazonas,Leve,272
+2021,Amazonas,Moderado,774
+2021,Amazonas,Severo,706
+2021,Apurímac,Leve,1006
+2021,Apurímac,Moderado,2150
+2021,Apurímac,Severo,637
+2021,Arequipa,Leve,4320
+2021,Arequipa,Moderado,8514
+2021,Arequipa,Severo,2296
+2021,Ayacucho,Leve,1269
+2021,Ayacucho,Moderado,2741
+2021,Ayacucho,Severo,1151
+2021,Cajamarca,Leve,1130
+2021,Cajamarca,Moderado,1678
+2021,Cajamarca,Severo,755
+2021,Callao,Leve,1196
+2021,Callao,Moderado,1997
+2021,Callao,Severo,466
+2021,Cusco,Leve,4297
+2021,Cusco,Moderado,5714
+2021,Cusco,Severo,1249
+2021,Huancavelica,Leve,377
+2021,Huancavelica,Moderado,1020
+2021,Huancavelica,Severo,665
+2021,Huánuco,Leve,1889
+2021,Huánuco,Moderado,2834
+2021,Huánuco,Severo,910
+2021,Ica,Leve,1428
+2021,Ica,Moderado,2809
+2021,Ica,Severo,1673
+2021,Junín,Leve,3356
+2021,Junín,Moderado,3318
+2021,Junín,Severo,1038
+2021,La Libertad,Leve,1611
+2021,La Libertad,Moderado,3626
+2021,La Libertad,Severo,2294
+2021,Lambayeque,Leve,815
+2021,Lambayeque,Moderado,2264
+2021,Lambayeque,Severo,1165
+2021,Lima,Leve,7299
+2021,Lima,Moderado,25000
+2021,Lima,Severo,12266
+2021,Loreto,Leve,356
+2021,Loreto,Moderado,974
+2021,Loreto,Severo,1204
+2021,Madre de Dios,Leve,203
+2021,Madre de Dios,Moderado,729
+2021,Madre de Dios,Severo,229
+2021,Moquegua,Leve,458
+2021,Moquegua,Moderado,869
+2021,Moquegua,Severo,201
+2021,Pasco,Leve,587
+2021,Pasco,Moderado,637
+2021,Pasco,Severo,475
+2021,Piura,Leve,1945
+2021,Piura,Moderado,3876
+2021,Piura,Severo,1619
+2021,Puno,Leve,1531
+2021,Puno,Moderado,2679
+2021,Puno,Severo,852
+2021,San Martín,Leve,2295
+2021,San Martín,Moderado,3183
+2021,San Martín,Severo,1500
+2021,Tacna,Leve,522
+2021,Tacna,Moderado,1498
+2021,Tacna,Severo,611
+2021,Tumbes,Leve,386
+2021,Tumbes,Moderado,1009
+2021,Tumbes,Severo,775
+2021,Ucayali,Leve,812
+2021,Ucayali,Moderado,1216
+2021,Ucayali,Severo,331
+2021,Áncash,Leve,1465
+2021,Áncash,Moderado,3949
+2021,Áncash,Severo,2839
+2022,Amazonas,Leve,161
+2022,Amazonas,Moderado,760
+2022,Amazonas,Severo,832
+2022,Apurímac,Leve,726
+2022,Apurímac,Moderado,1764
+2022,Apurímac,Severo,631
+2022,Arequipa,Leve,3728
+2022,Arequipa,Moderado,8783
+2022,Arequipa,Severo,2403
+2022,Ayacucho,Leve,982
+2022,Ayacucho,Moderado,2281
+2022,Ayacucho,Severo,1300
+2022,Cajamarca,Leve,764
+2022,Cajamarca,Moderado,1445
+2022,Cajamarca,Severo,800
+2022,Callao,Leve,831
+2022,Callao,Moderado,2051
+2022,Callao,Severo,650
+2022,Cusco,Leve,3495
+2022,Cusco,Moderado,5139
+2022,Cusco,Severo,1252
+2022,Huancavelica,Leve,402
+2022,Huancavelica,Moderado,1321
+2022,Huancavelica,Severo,636
+2022,Huánuco,Leve,1501
+2022,Huánuco,Moderado,2532
+2022,Huánuco,Severo,654
+2022,Ica,Leve,1308
+2022,Ica,Moderado,2897
+2022,Ica,Severo,1554
+2022,Junín,Leve,2549
+2022,Junín,Moderado,3441
+2022,Junín,Severo,1218
+2022,La Libertad,Leve,1660
+2022,La Libertad,Moderado,3420
+2022,La Libertad,Severo,2202
+2022,Lambayeque,Leve,705
+2022,Lambayeque,Moderado,2003
+2022,Lambayeque,Severo,1142
+2022,Lima,Leve,6438
+2022,Lima,Moderado,23712
+2022,Lima,Severo,11313
+2022,Loreto,Leve,340
+2022,Loreto,Moderado,1076
+2022,Loreto,Severo,1389
+2022,Madre de Dios,Leve,118
+2022,Madre de Dios,Moderado,644
+2022,Madre de Dios,Severo,414
+2022,Moquegua,Leve,419
+2022,Moquegua,Moderado,892
+2022,Moquegua,Severo,145
+2022,No especificado,Moderado,9
+2022,Pasco,Leve,582
+2022,Pasco,Moderado,622
+2022,Pasco,Severo,467
+2022,Piura,Leve,2085
+2022,Piura,Moderado,4146
+2022,Piura,Severo,1595
+2022,Puno,Leve,1415
+2022,Puno,Moderado,2449
+2022,Puno,Severo,687
+2022,San Martín,Leve,1686
+2022,San Martín,Moderado,2976
+2022,San Martín,Severo,1574
+2022,Tacna,Leve,526
+2022,Tacna,Moderado,1600
+2022,Tacna,Severo,671
+2022,Tumbes,Leve,282
+2022,Tumbes,Moderado,856
+2022,Tumbes,Severo,675
+2022,Ucayali,Leve,645
+2022,Ucayali,Moderado,1322
+2022,Ucayali,Severo,689
+2022,Áncash,Leve,1396
+2022,Áncash,Moderado,3825
+2022,Áncash,Severo,2594
+2023,Amazonas,Leve,169
+2023,Amazonas,Moderado,744
+2023,Amazonas,Severo,1032
+2023,Apurímac,Leve,481
+2023,Apurímac,Moderado,1758
+2023,Apurímac,Severo,748
+2023,Arequipa,Leve,4281
+2023,Arequipa,Moderado,10011
+2023,Arequipa,Severo,2919
+2023,Ayacucho,Leve,930
+2023,Ayacucho,Moderado,2395
+2023,Ayacucho,Severo,1806
+2023,Cajamarca,Leve,1022
+2023,Cajamarca,Moderado,1686
+2023,Cajamarca,Severo,800
+2023,Callao,Leve,759
+2023,Callao,Moderado,2305
+2023,Callao,Severo,595
+2023,Cusco,Leve,3128
+2023,Cusco,Moderado,5662
+2023,Cusco,Severo,1518
+2023,Huancavelica,Leve,539
+2023,Huancavelica,Moderado,1165
+2023,Huancavelica,Severo,918
+2023,Huánuco,Leve,1420
+2023,Huánuco,Moderado,2485
+2023,Huánuco,Severo,862
+2023,Ica,Leve,1356
+2023,Ica,Moderado,2803
+2023,Ica,Severo,1986
+2023,Junín,Leve,2106
+2023,Junín,Moderado,3602
+2023,Junín,Severo,1576
+2023,La Libertad,Leve,1598
+2023,La Libertad,Moderado,3815
+2023,La Libertad,Severo,2643
+2023,Lambayeque,Leve,624
+2023,Lambayeque,Moderado,2027
+2023,Lambayeque,Severo,1419
+2023,Lima,Leve,6719
+2023,Lima,Moderado,25387
+2023,Lima,Severo,14581
+2023,Loreto,Leve,332
+2023,Loreto,Moderado,1170
+2023,Loreto,Severo,1546
+2023,Madre de Dios,Leve,79
+2023,Madre de Dios,Moderado,575
+2023,Madre de Dios,Severo,390
+2023,Moquegua,Leve,445
+2023,Moquegua,Moderado,1018
+2023,Moquegua,Severo,257
+2023,No especificado,Moderado,10
+2023,Pasco,Leve,395
+2023,Pasco,Moderado,615
+2023,Pasco,Severo,426
+2023,Piura,Leve,2117
+2023,Piura,Moderado,3701
+2023,Piura,Severo,1830
+2023,Puno,Leve,1253
+2023,Puno,Moderado,2429
+2023,Puno,Severo,828
+2023,San Martín,Leve,1582
+2023,San Martín,Moderado,2975
+2023,San Martín,Severo,1771
+2023,Tacna,Leve,350
+2023,Tacna,Moderado,1646
+2023,Tacna,Severo,704
+2023,Tumbes,Leve,256
+2023,Tumbes,Moderado,907
+2023,Tumbes,Severo,840
+2023,Ucayali,Leve,345
+2023,Ucayali,Moderado,1593
+2023,Ucayali,Severo,972
+2023,Áncash,Leve,1536
+2023,Áncash,Moderado,4117
+2023,Áncash,Severo,2919
+2024,Amazonas,Leve,125
+2024,Amazonas,Moderado,764
+2024,Amazonas,Severo,1246
+2024,Apurímac,Leve,610
+2024,Apurímac,Moderado,1744
+2024,Apurímac,Severo,771
+2024,Arequipa,Leve,3550
+2024,Arequipa,Moderado,9679
+2024,Arequipa,Severo,2980
+2024,Ayacucho,Leve,631
+2024,Ayacucho,Moderado,2677
+2024,Ayacucho,Severo,2170
+2024,Cajamarca,Leve,1097
+2024,Cajamarca,Moderado,2182
+2024,Cajamarca,Severo,1077
+2024,Callao,Leve,712
+2024,Callao,Moderado,2368
+2024,Callao,Severo,985
+2024,Cusco,Leve,3079
+2024,Cusco,Moderado,6028
+2024,Cusco,Severo,1666
+2024,Huancavelica,Leve,661
+2024,Huancavelica,Moderado,1200
+2024,Huancavelica,Severo,918
+2024,Huánuco,Leve,1642
+2024,Huánuco,Moderado,2386
+2024,Huánuco,Severo,1304
+2024,Ica,Leve,1264
+2024,Ica,Moderado,2890
+2024,Ica,Severo,2279
+2024,Junín,Leve,1780
+2024,Junín,Moderado,3515
+2024,Junín,Severo,1727
+2024,La Libertad,Leve,1820
+2024,La Libertad,Moderado,3659
+2024,La Libertad,Severo,2933
+2024,Lambayeque,Leve,577
+2024,Lambayeque,Moderado,1908
+2024,Lambayeque,Severo,1303
+2024,Lima,Leve,5980
+2024,Lima,Moderado,24175
+2024,Lima,Severo,13938
+2024,Loreto,Leve,490
+2024,Loreto,Moderado,1405
+2024,Loreto,Severo,1599
+2024,Madre de Dios,Leve,103
+2024,Madre de Dios,Moderado,852
+2024,Madre de Dios,Severo,421
+2024,Moquegua,Leve,423
+2024,Moquegua,Moderado,955
+2024,Moquegua,Severo,291
+2024,No especificado,Moderado,13
+2024,No especificado,Severo,8
+2024,Pasco,Leve,421
+2024,Pasco,Moderado,567
+2024,Pasco,Severo,447
+2024,Piura,Leve,1730
+2024,Piura,Moderado,3673
+2024,Piura,Severo,2146
+2024,Puno,Leve,1301
+2024,Puno,Moderado,2804
+2024,Puno,Severo,1050
+2024,San Martín,Leve,1421
+2024,San Martín,Moderado,3490
+2024,San Martín,Severo,2389
+2024,Tacna,Leve,322
+2024,Tacna,Moderado,1718
+2024,Tacna,Severo,977
+2024,Tumbes,Leve,199
+2024,Tumbes,Moderado,698
+2024,Tumbes,Severo,1122
+2024,Ucayali,Leve,248
+2024,Ucayali,Moderado,1416
+2024,Ucayali,Severo,1219
+2024,Áncash,Leve,1423
+2024,Áncash,Moderado,4096
+2024,Áncash,Severo,3052
+2025,Amazonas,Leve,121
+2025,Amazonas,Moderado,856
+2025,Amazonas,Severo,1304
+2025,Apurímac,Leve,586
+2025,Apurímac,Moderado,1791
+2025,Apurímac,Severo,773
+2025,Arequipa,Leve,3369
+2025,Arequipa,Moderado,9581
+2025,Arequipa,Severo,3082
+2025,Ayacucho,Leve,705
+2025,Ayacucho,Moderado,2639
+2025,Ayacucho,Severo,2722
+2025,Cajamarca,Leve,1009
+2025,Cajamarca,Moderado,1939
+2025,Cajamarca,Severo,1123
+2025,Callao,Leve,740
+2025,Callao,Moderado,2578
+2025,Callao,Severo,1193
+2025,Cusco,Leve,2908
+2025,Cusco,Moderado,6273
+2025,Cusco,Severo,1740
+2025,Huancavelica,Leve,672
+2025,Huancavelica,Moderado,1132
+2025,Huancavelica,Severo,828
+2025,Huánuco,Leve,1788
+2025,Huánuco,Moderado,2557
+2025,Huánuco,Severo,1204
+2025,Ica,Leve,1214
+2025,Ica,Moderado,2961
+2025,Ica,Severo,2462
+2025,Junín,Leve,1834
+2025,Junín,Moderado,3455
+2025,Junín,Severo,1931
+2025,La Libertad,Leve,1722
+2025,La Libertad,Moderado,3383
+2025,La Libertad,Severo,3603
+2025,Lambayeque,Leve,582
+2025,Lambayeque,Moderado,1876
+2025,Lambayeque,Severo,1516
+2025,Lima,Leve,6335
+2025,Lima,Moderado,24440
+2025,Lima,Severo,13700
+2025,Loreto,Leve,500
+2025,Loreto,Moderado,1168
+2025,Loreto,Severo,1844
+2025,Madre de Dios,Leve,113
+2025,Madre de Dios,Moderado,1042
+2025,Madre de Dios,Severo,268
+2025,Moquegua,Leve,455
+2025,Moquegua,Moderado,902
+2025,Moquegua,Severo,414
+2025,No especificado,Leve,14
+2025,No especificado,Moderado,14
+2025,No especificado,Severo,7
+2025,Pasco,Leve,449
+2025,Pasco,Moderado,683
+2025,Pasco,Severo,449
+2025,Piura,Leve,1667
+2025,Piura,Moderado,3840
+2025,Piura,Severo,1947
+2025,Puno,Leve,1086
+2025,Puno,Moderado,2833
+2025,Puno,Severo,1012
+2025,San Martín,Leve,1146
+2025,San Martín,Moderado,3415
+2025,San Martín,Severo,2186
+2025,Tacna,Leve,330
+2025,Tacna,Moderado,1708
+2025,Tacna,Severo,1000
+2025,Tumbes,Leve,231
+2025,Tumbes,Moderado,736
+2025,Tumbes,Severo,1176
+2025,Ucayali,Leve,272
+2025,Ucayali,Moderado,1222
+2025,Ucayali,Severo,1096
+2025,Áncash,Leve,1377
+2025,Áncash,Moderado,3800
+2025,Áncash,Severo,2907

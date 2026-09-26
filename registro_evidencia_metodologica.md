@@ -24,6 +24,7 @@ Este registro acompaña cada decisión reproducible del análisis. Las fuentes s
 | 2026-08-27 | Reportar ROC/AUC solo como análisis complementario de la prueba final. | En 2025, AUC one-vs-rest: Leve 0.695, Moderado 0.564 y Severo 0.656. Las curvas se calcularon después de congelar el modelo y no se usaron para elegirlo ni para ajustar umbrales. | Aprobada para caracterización; no como criterio de selección. |
 | 2026-08-28 | Fijar el entorno y la identidad de la fuente. | Python 3.13.14 y resolución en `requirements.lock`; `metadata/fuente_bd_2020_2025.json` registra SHA-256 `464580235f762e6449d1d4adb4efc7d361509fdd829e1dc80d7984336cde5065` de la copia local de 367,491,576 bytes. | Aprobada para reproducción técnica; no publica datos. |
 | 2026-08-28 | Persistir el modelo confirmatorio congelado de forma local. | El notebook 09 guarda el CatBoost principal y un JSON de su configuración con huella SHA-256 en `modelos/`, directorio ignorado por Git. | Aprobada; no reemplaza la evaluación confirmatoria ni habilita uso operativo. |
+| 2026-09-25 | Versionar insumo inmutable del Top 30 de características (`referencia_repositorio_top30_riesgo.csv`). | Matriz de 30 predictores evaluados con 5 métodos (CV, Mutual Info, Random Forest, Permutación, RFE) sobre entrenamiento 2020–2023. Permite al notebook 04 auditar variables contra un consenso auditable sin dependencias volátiles. | Aprobada como insumo de auditoría metodológica; no define asignación automática ni causalidad. |
 
 ## Marco explicativo de la tesis
 
@@ -78,3 +79,16 @@ La validación temporal 2024 comparará, para cada escenario, el conjunto comple
 ### Resultado de comparación en 2024 (2026-08-27)
 
 El candidato prospectivo principal queda definido como **CatBoost balanceado con el conjunto inicial parsimonioso**: macro-F1 0.4247, balanced accuracy 0.4521, recall Severo 0.5145 y precisión Severo 0.4053. Es el mejor macro-F1 inicial y emplea nueve variables. En el escenario retrospectivo, Random Forest completo lidera macro-F1 (0.4392; recall Severo 0.6041), mientras Extra Trees completo tiene mayor recall/F1 Severo (0.6241/0.5119) a cambio de 1,676 alertas Severas falsas adicionales. La elección retrospectiva requiere una regla institucional explícita; se reportará Random Forest como resultado global y Extra Trees como sensibilidad de mayor detección. Véase [interpretacion_comparacion_modelos_2024.md](interpretacion_comparacion_modelos_2024.md).
+ 
+### Procedencia y función del Top 30 de referencia (`referencia_repositorio_top30_riesgo.csv`)
+
+- **Origen metodológico:** Matriz calculada a partir de los datos de desarrollo (2020–2023) integrando cinco métodos complementarios de selección supervisada sobre el nivel de riesgo:
+  1. `score_cv`: relevancia en validación cruzada estratificada con regresión logística.
+  2. `score_mi`: información mutua (*Mutual Information*).
+  3. `score_rf`: importancia por impureza media Gini de Random Forest.
+  4. `score_perm`: importancia por permutación (*Permutation Feature Importance*) sobre partición de desarrollo.
+  5. `score_rfe`: selección recursiva de características (*RFECV*).
+  El `score_consenso` normaliza los percentiles de cada método en el rango $[0, 1]$, priorizando predictores estables frente a algoritmos tanto lineales como no lineales.
+- **Función en el pipeline:** El archivo es consumido por el notebook `04_auditoria_caracteristicas_nivel_riesgo.ipynb` para contrastar las variables candidatas con un benchmark histórico congelado, verificar su cobertura temporal y aplicar compuertas de exclusión ética (ej. exclusión de `CONDICION` y variables de intervención posterior).
+- **Trazabilidad y licencia:** Artefacto derivado estadísticamente de los datos abiertos del Programa Nacional Warmi Ñan (MIMP), distribuido bajo la misma licencia MIT del repositorio. No contiene microdatos ni información reidentificable de personas usuarias.
+

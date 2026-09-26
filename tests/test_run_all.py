@@ -11,3 +11,6 @@ class RunAllTests(unittest.TestCase):
 
     def test_resume_uses_the_requested_notebook(self) -> None:
         self.assertEqual([path.name[:2] for path in selected_notebooks(6)], ["06", "07", "08", "09", "10"])
+
+    def test_range_selection_returns_exact_subset(self) -> None:
+        self.assertEqual([path.name[:2] for path in selected_notebooks(3, 6)], ["03", "04", "05", "06"])

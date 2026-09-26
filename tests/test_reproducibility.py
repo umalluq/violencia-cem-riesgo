@@ -55,6 +55,35 @@ class ReproducibilityContractTests(unittest.TestCase):
         self.assertIn("BLOQUEADAS_RIESGO", source)
         self.assertIn("assert not fuga", source)
 
+    def test_notebooks_do_not_contain_deprecated_n_jobs(self):
+        for nb_path in ROOT.glob("[0-9][0-9]_*.ipynb"):
+            nb = json.loads(nb_path.read_text(encoding="utf-8"))
+            for cell in nb.get("cells", []):
+                source = "".join(cell.get("source", []))
+                self.assertNotIn("n_jobs", source, f"Se encontró 'n_jobs' deprecado en {nb_path.name}")
+
+    def test_run_all_declares_thread_determinism_environment(self):
+        source = (ROOT / "run_all.py").read_text(encoding="utf-8")
+        self.assertIn("OMP_NUM_THREADS", source)
+        self.assertIn("PYTHONHASHSEED", source)
+        self.assertIn("REPRO_ENV", source)
+
+    def test_fingerprint_script_supports_verification_mode(self):
+        source = (ROOT / "scripts" / "fingerprint_source.py").read_text(encoding="utf-8")
+        self.assertIn("--verify", source)
+        self.assertIn("expected_sha", source)
+
+    def test_dashboard_aggregated_data_enforces_statistical_confidentiality(self):
+        csv_path = ROOT / "data" / "resumen_agregado_cem.csv"
+        self.assertTrue(csv_path.is_file(), "El archivo de resumen agregado del dashboard debe existir.")
+        import pandas as pd
+        df = pd.read_csv(csv_path)
+        self.assertIn("Casos", df.columns)
+        self.assertIn("DEPARTAMENTO", df.columns)
+        self.assertIn("NIVEL_RIESGO", df.columns)
+        conteo_menores_a_5 = (df["Casos"] < 5).sum()
+        self.assertEqual(conteo_menores_a_5, 0, "No debe existir ninguna celda visible con menos de 5 casos.")
+
 
 if __name__ == "__main__":
     unittest.main()

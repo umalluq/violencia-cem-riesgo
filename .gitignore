@@ -18,6 +18,7 @@ __pycache__/
 # Material de referencia local y archivos de apoyo no esenciales
 referencia_repositorio_*
 !referencia_repositorio_top30_riesgo.csv
+!data/resumen_agregado_cem.csv
 *.xlsx
 *.pdf
 
